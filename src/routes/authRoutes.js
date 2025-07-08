@@ -8,12 +8,10 @@ const router = express.Router();
 
 // REGISTER a new user endpoint
 router.post("/register",(req,res)=>{
-    console.log(req.body);
     const {username,password} = req.body;
 
     // Encrypt the password
     const hashedPass = bcrypt.hashSync(password);
-    log(hashedPass);
 
     // Save the username & password to DB
     try {
@@ -68,7 +66,6 @@ router.post("/login",(req,res)=>{
             return res.status(401).send({message:"Invalid Password"});
         }
 
-        log(user);
 
         // Create a token after successful authentication
         const token = jwt.sign({

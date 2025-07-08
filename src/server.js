@@ -3,6 +3,10 @@ import path,{dirname} from 'path';
 import { fileURLToPath } from 'url';
 import authRoutes from './routes/authRoutes.js';
 import toDoRoutes from './routes/todoRoutes.js';
+import authMiddleware from './middleware/authMiddleware.js';
+
+
+// Important req properties: body,params,query
 
 const PORT= process.env.PORT || 4646;
 const app = express();
@@ -24,7 +28,7 @@ app.get("/",(req,res)=>{
     return res.sendFile(path.join(__dirname,"..","public","index.html"));
 })
 
-app.use("/todos",toDoRoutes);
+app.use("/todos",authMiddleware,toDoRoutes);
 app.use("/auth",authRoutes);
 
 app.listen(PORT,(req,res)=>{

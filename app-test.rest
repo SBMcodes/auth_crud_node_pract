@@ -18,3 +18,31 @@ Content-Type: application/json
     "username":"Sammy",
     "password":"noPassword"
 }
+
+###
+GET http://localhost:4646/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUxOTk4OTA2LCJleHAiOjE3NTIwODUzMDZ9.Ij_nIJP5MHIwUlqQZYb-VOJVBVq5n0-4tO5A17BTbBU
+
+###
+POST http://localhost:4646/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUxOTk4OTA2LCJleHAiOjE3NTIwODUzMDZ9.Ij_nIJP5MHIwUlqQZYb-VOJVBVq5n0-4tO5A17BTbBU
+Content-Type: application/json
+
+{ 
+    "task": "New Task" 
+}
+
+
+###
+PUT http://localhost:4646/todos/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUxOTk4OTA2LCJleHAiOjE3NTIwODUzMDZ9.Ij_nIJP5MHIwUlqQZYb-VOJVBVq5n0-4tO5A17BTbBU
+Content-Type: application/json
+
+{ 
+    "task": "Updated Task" ,
+    "completed": 1
+}
+
+###
+DELETE http://localhost:4646/todos/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUxOTk4OTA2LCJleHAiOjE3NTIwODUzMDZ9.Ij_nIJP5MHIwUlqQZYb-VOJVBVq5n0-4tO5A17BTbBU

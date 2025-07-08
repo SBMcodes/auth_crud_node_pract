@@ -1,0 +1,20 @@
+###
+GET http://localhost:4646
+
+###
+POST http://localhost:4646/auth/register
+Content-Type: application/json
+
+{
+    "username":"Sammy",
+    "password":"noPassword"
+}
+
+###
+POST http://localhost:4646/auth/login
+Content-Type: application/json
+
+{
+    "username":"Sammy",
+    "password":"noPassword"
+}
